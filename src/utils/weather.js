@@ -8,7 +8,9 @@ const weather = (lat, long, callback) => {
         } else if (body.error) {
             callback('No weather data found', undefined);
         } else {
-            callback(undefined, body.current.weather_descriptions[0]);
+            callback(undefined, "Weather Discription: " +
+                body.current.weather_descriptions[0] +
+                ", Humidity: " + body.current.humidity);
         }
     })
 }
